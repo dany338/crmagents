@@ -49,7 +49,15 @@ http://localhost:5000/auth
 ```
 
 ```sh
-http://localhost:5000/reservation
+http://localhost:5000/agents
+```
+
+```sh
+http://localhost:5000/leads
+```
+
+```sh
+http://localhost:5000/judicials
 ```
 
 ## endpoints
@@ -72,24 +80,43 @@ http://localhost:5000/reservation
 | 2.5. User Update       | PUT    | http://localhost:5000/users/:id        |
 | 2.6. User Delete       | DELETE | http://localhost:5000/users/:id        |
 
-#### 3. endpoints for reservation:
+#### 3. endpoints for agent:
 
-| Endpoint                      | VERB   | PATH                                         |
-| ----------------------------- | ------ | -------------------------------------------- |
-| 3.1. Reservation List         | GET    | http://localhost:5000/reservation/           |
-| 3.2. Reservation Id           | GET    | http://localhost:5000/reservation/:id        |
-| 3.3. Reservation List by page | GET    | http://localhost:5000/reservation/page/:page |
-| 3.4. Reservation Create       | POST   | http://localhost:5000/reservation/           |
-| 3.5. Reservation Update       | PUT    | http://localhost:5000/reservation/:id        |
-| 3.6. Reservation Delete       | DELETE | http://localhost:5000/reservation/:id        |
+| Endpoint                | VERB   | PATH                                           |
+| ----------------------- | ------ | ---------------------------------------------- |
+| 3.1. Agent List         | GET    | http://localhost:5000/agents/                  |
+| 3.2. Agent Id           | GET    | http://localhost:5000/agents/:id               |
+| 3.3. Agent List by page | GET    | http://localhost:5000/agents/page/:page        |
+| 3.4. Agent Create       | POST   | http://localhost:5000/agents/                  |
+| 3.5. Agent Update       | PUT    | http://localhost:5000/agents/:id               |
+| 3.6. Agent Delete       | DELETE | http://localhost:5000/agents/:id               |
+| 3.7. Agents by User     | GET    | http://localhost:5000/agents/agents/user/:user |
 
-#### diagrams from diagram.net:
+#### 4. endpoints for lead:
 
-https://app.diagrams.net/#G1cM-MdIOoNTJVVJTYiIsrBZmlF0KPNJNS
+| Endpoint               | VERB   | PATH                                           |
+| ---------------------- | ------ | ---------------------------------------------- |
+| 4.1. Lead List         | GET    | http://localhost:5000/leads/                   |
+| 4.2. Lead Id           | GET    | http://localhost:5000/leads/:id                |
+| 4.3. Lead List by page | GET    | http://localhost:5000/leads/page/:page         |
+| 4.4. Lead Create       | POST   | http://localhost:5000/leads/                   |
+| 4.5. Lead Update       | PUT    | http://localhost:5000/leads/:id                |
+| 4.6. Lead Delete       | DELETE | http://localhost:5000/leads/:id                |
+| 4.7. Lead Delete       | DELETE | http://localhost:5000/leads/:id                |
+| 4.8. Lead Search       | POST   | http://localhost:5000/leads/search             |
+| 4.9. Lead Validation   | GET    | http://localhost:5000/leads/validation/:id     |
+| 4.10. Leads by Agent   | GET    | http://localhost:5000/leads/leads/agent/:agent |
 
-https://drive.google.com/file/d/1cM-MdIOoNTJVVJTYiIsrBZmlF0KPNJNS/view?usp=sharing
+#### 5. endpoints for judicial:
 
-review this folder diagrams
+| Endpoint                   | VERB   | PATH                                       |
+| -------------------------- | ------ | ------------------------------------------ |
+| 5.1. Judicial List         | GET    | http://localhost:5000/judicials/           |
+| 5.2. Judicial Id           | GET    | http://localhost:5000/judicials/:id        |
+| 5.3. Judicial List by page | GET    | http://localhost:5000/judicials/page/:page |
+| 5.4. Judicial Create       | POST   | http://localhost:5000/judicials/           |
+| 5.5. Judicial Update       | PUT    | http://localhost:5000/judicials/:id        |
+| 5.6. Judicial Delete       | DELETE | http://localhost:5000/judicials/:id        |
 
 #### Architecture:
 
@@ -177,7 +204,3 @@ I suggest install xampp for simulate your server into local machine, and them in
 https://console.aws.amazon.com/iam/home?region=us-east-2#/users
 
 RDS: database relational > MySQL > Dev/Test > Burstable classes (includes t classes)
-
-(https://raw.githubusercontent.com/dany338/movies_backend/master/diagrams/Movies%20Backend%20Test-Model.png)
-
-**Free Software, Test Backend!**
