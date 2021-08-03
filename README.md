@@ -118,6 +118,17 @@ http://localhost:5000/judicials
 | 5.5. Judicial Update       | PUT    | http://localhost:5000/judicials/:id        |
 | 5.6. Judicial Delete       | DELETE | http://localhost:5000/judicials/:id        |
 
+#### 6. endpoints for rol:
+
+| Endpoint              | VERB   | PATH                                   |
+| --------------------- | ------ | -------------------------------------- |
+| 6.1. Rol List         | GET    | http://localhost:5000/roles/           |
+| 6.2. Rol Id           | GET    | http://localhost:5000/roles/:id        |
+| 6.3. Rol List by page | GET    | http://localhost:5000/roles/page/:page |
+| 6.4. Rol Create       | POST   | http://localhost:5000/roles/           |
+| 6.5. Rol Update       | PUT    | http://localhost:5000/roles/:id        |
+| 6.6. Rol Delete       | DELETE | http://localhost:5000/roles/:id        |
+
 #### Architecture:
 
 This project is to base hexagonal architecture

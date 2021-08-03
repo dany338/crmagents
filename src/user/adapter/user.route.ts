@@ -6,12 +6,10 @@ import { ErrorHandler } from '../../helper/errors.handler';
 import { AuthenticationGuard } from '../../shared/infraestructure/guards/authentication.guard';
 import { AuthorizationGuard } from '../../shared/infraestructure/guards/authorization.guard';
 import { UserOperation } from '../infraestructure/user.operation';
-import { AgentOperation } from '../../agent/infraestructure/agent.operation';
 import { UserUseCase } from '../application/user.usecase';
 
 const operation = new UserOperation();
-const operationAgent = new AgentOperation();
-const useCase = new UserUseCase(operation, operationAgent);
+const useCase = new UserUseCase(operation);
 const controller = new UserController(useCase);
 const route = express.Router();
 

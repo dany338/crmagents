@@ -20,16 +20,6 @@ export class UserUseCase extends UseCaseRepository<UserModel, UserRepository> {
     entity.refreshToken = UserService.generateRefreshToken();
 
     const result = await this.operation.insertCipher(entity);
-    // console.log('result insertCipher', result);
-    // const listMovies: any[] = [];
-    // entity.movies.forEach((movie) => {
-    //   console.log('movie', movie);
-    //   movie.user = result.payload.data;
-    //   listMovies.push(this.operationMovie.insert(movie));
-    // });
-
-    // const movies = await Promise.all(listMovies);
-    // entity.movies = movies;
     return result;
   }
 }
