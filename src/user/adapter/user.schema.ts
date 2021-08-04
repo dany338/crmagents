@@ -18,9 +18,7 @@ export const schemas = {
       name: Joi.string().required(),
       email: Joi.string().email().required(),
       password: Joi.string()
-        .pattern(
-          new RegExp('^(?=.*[a-z])(?=.*[A-Z])[0-9](?=.*[!@#?]]){10,30}$')
-        )
+        .pattern(new RegExp('^[a-zA-Z0-9!@#?]{3,30}$'))
         .required(),
       agents: Joi.array(),
       roles: Joi.array(),
@@ -31,9 +29,7 @@ export const schemas = {
     body: Joi.object({
       name: Joi.string(),
       email: Joi.string().email(),
-      password: Joi.string().pattern(
-        new RegExp('^(?=.*[a-z])(?=.*[A-Z])[0-9](?=.*[!@#?]]){10,30}$')
-      ),
+      password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9!@#?]{3,30}$')),
     }),
   },
   REMOVE: {

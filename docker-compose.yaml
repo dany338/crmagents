@@ -3,6 +3,6 @@ version: '3'
 services:
   app:
     build: .
-    container_name: monolito
+    container_name: monolitoc
     ports:
-      - '9000:80'
+      - '9001:80'

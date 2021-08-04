@@ -14,7 +14,9 @@ export const schemas = {
     }),
   },
   LIST_LEADS_BY_AGENT: {
-    params: paramId,
+    params: Joi.object({
+      agent: Joi.number().min(0).required(),
+    }),
   },
   SEARCH_BY_NAME: {
     body: Joi.object({

@@ -19,7 +19,7 @@ export const schemas = {
   INSERT: {
     body: Joi.object({
       firstname: Joi.string().required(),
-      lastname: Joi.number().required(),
+      lastname: Joi.string().required(),
       idcard: Joi.string().required(),
       user: Joi.number().required(),
     }),
@@ -28,7 +28,7 @@ export const schemas = {
     params: paramId,
     body: Joi.object({
       firstname: Joi.string().required(),
-      lastname: Joi.number().required(),
+      lastname: Joi.string().required(),
     }),
   },
   REMOVE: {

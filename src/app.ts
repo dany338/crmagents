@@ -29,4 +29,11 @@ app.get('/health', (req: Request, res: Response) =>
 app.use(ErrorHandler.pathNotFound);
 app.use(ErrorHandler.generic);
 
+app.use((err: any, req: Request, res: Response) => {
+  res.locals.error = err;
+  const status = err.status || 500;
+  res.status(status);
+  res.render('error');
+});
+
 export default app;

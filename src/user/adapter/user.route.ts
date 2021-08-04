@@ -2,7 +2,6 @@ import express from 'express';
 import { UserController } from './user.controller';
 import { Validators } from '../../shared/adapter/validator';
 import { schemas } from './user.schema';
-import { ErrorHandler } from '../../helper/errors.handler';
 import { AuthenticationGuard } from '../../shared/infraestructure/guards/authentication.guard';
 import { AuthorizationGuard } from '../../shared/infraestructure/guards/authorization.guard';
 import { UserOperation } from '../infraestructure/user.operation';
@@ -35,10 +34,11 @@ route.get(
 );
 route.post(
   '/',
-  // AuthenticationGuard.canActivate, // Activar cuando se haya creado un usuario
-  // AuthorizationGuard.canActivate('ADMIN'), // Activar cuando se haya creado un usuario
+  AuthenticationGuard.canActivate, // Activar cuando se haya creado un usuario administrador
+  AuthorizationGuard.canActivate('ADMIN'), // Activar cuando se haya creado un usuario administrador
   Validators.validate(schemas.INSERT),
-  ErrorHandler.asyncError(controller.insert.bind(controller))
+  controller.insert.bind(controller)
+  // ErrorHandler.asyncError(controller.insert.bind(controller))
 );
 route.put(
   '/:id',

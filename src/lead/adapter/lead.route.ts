@@ -34,7 +34,7 @@ route.get(
   controller.listByPage.bind(controller)
 );
 route.get(
-  '/leads/agent/:agent',
+  '/agent/:agent',
   AuthenticationGuard.canActivate,
   AuthorizationGuard.canActivate('ADMIN', 'AGENT'),
   Validators.validate(schemas.LIST_LEADS_BY_AGENT),
@@ -52,7 +52,7 @@ route.get(
   AuthenticationGuard.canActivate,
   AuthorizationGuard.canActivate('ADMIN', 'AGENT'),
   Validators.validate(schemas.GET_VALIDATION),
-  controller.listByPage.bind(controller)
+  controller.getValidation.bind(controller)
 );
 route.post(
   '/',

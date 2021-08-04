@@ -30,6 +30,6 @@ export class User {
   @OneToMany(() => Agent, (agent) => agent.user)
   agents: Agent[];
 
-  @ManyToMany((type) => Role, (role) => role.users)
+  @ManyToMany(() => Role, (role) => role.users)
   roles: Role[];
 }

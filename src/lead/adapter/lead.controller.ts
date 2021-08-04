@@ -48,8 +48,8 @@ export class RoleController {
   async getValidation(req: Request, res: Response): Promise<any> {
     const params = req.params;
     const id = +params.id;
-    const where: object[] = [];
-    const relations: string[] = ['judicial'];
+    const where: object[] = [{ id }];
+    const relations: string[] = ['judicials'];
     const result = await this.useCase.getValidation(id, where, relations);
     res.json(result);
   }

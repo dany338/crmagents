@@ -11,7 +11,7 @@ export class AuthUseCase {
   async login(entity: Partial<UserModel>) {
     const user: UserModel = await this.operation.login(
       { email: entity.email },
-      ['movies']
+      ['roles']
     );
     console.log('user', user);
 

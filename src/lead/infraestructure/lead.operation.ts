@@ -48,7 +48,7 @@ export class LeadOperation
   ): Promise<Result<LeadModel>> {
     const trace: string = OperationService.getTrace();
     const repository: Repository<Lead> = getRepository(Lead);
-    const data: LeadModel[] = await repository.find({ where, relations, order });
+    const data: any = await repository.findOne({ where, relations, order });
     console.log('getValidation', data);
     return ResponseDto.format(trace, data);
   }

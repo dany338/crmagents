@@ -29,11 +29,11 @@ export class RoleController {
 
   async insert(req: Request, res: Response): Promise<any> {
     const body = req.body;
-    const Judicial: JudicialModel = {
+    const judicial: JudicialModel = {
       description: body.description,
       lead: body.lead,
     };
-    const result = await this.useCase.insert(Judicial);
+    const result = await this.useCase.insert(judicial);
     res.json(result);
   }
 

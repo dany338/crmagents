@@ -28,5 +28,5 @@ export class Lead {
   agent: Agent;
 
   @OneToMany(() => Judicial, (judicial) => judicial.lead)
-  Judicials: Judicial[];
+  judicials: Judicial[];
 }

@@ -9,6 +9,6 @@ export class Judicial {
   @Column({ type: 'varchar', length: 200 })
   description: string;
 
-  @ManyToOne(() => Lead, (lead) => lead.Judicials)
+  @ManyToOne(() => Lead, (lead) => lead.judicials)
   lead: Lead;
 }

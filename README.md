@@ -82,30 +82,30 @@ http://localhost:5000/judicials
 
 #### 3. endpoints for agent:
 
-| Endpoint                | VERB   | PATH                                           |
-| ----------------------- | ------ | ---------------------------------------------- |
-| 3.1. Agent List         | GET    | http://localhost:5000/agents/                  |
-| 3.2. Agent Id           | GET    | http://localhost:5000/agents/:id               |
-| 3.3. Agent List by page | GET    | http://localhost:5000/agents/page/:page        |
-| 3.4. Agent Create       | POST   | http://localhost:5000/agents/                  |
-| 3.5. Agent Update       | PUT    | http://localhost:5000/agents/:id               |
-| 3.6. Agent Delete       | DELETE | http://localhost:5000/agents/:id               |
-| 3.7. Agents by User     | GET    | http://localhost:5000/agents/agents/user/:user |
+| Endpoint                | VERB   | PATH                                    |
+| ----------------------- | ------ | --------------------------------------- |
+| 3.1. Agent List         | GET    | http://localhost:5000/agents/           |
+| 3.2. Agent Id           | GET    | http://localhost:5000/agents/:id        |
+| 3.3. Agent List by page | GET    | http://localhost:5000/agents/page/:page |
+| 3.4. Agent Create       | POST   | http://localhost:5000/agents/           |
+| 3.5. Agent Update       | PUT    | http://localhost:5000/agents/:id        |
+| 3.6. Agent Delete       | DELETE | http://localhost:5000/agents/:id        |
+| 3.7. Agents by User     | GET    | http://localhost:5000/agents/user/:user |
 
 #### 4. endpoints for lead:
 
-| Endpoint               | VERB   | PATH                                           |
-| ---------------------- | ------ | ---------------------------------------------- |
-| 4.1. Lead List         | GET    | http://localhost:5000/leads/                   |
-| 4.2. Lead Id           | GET    | http://localhost:5000/leads/:id                |
-| 4.3. Lead List by page | GET    | http://localhost:5000/leads/page/:page         |
-| 4.4. Lead Create       | POST   | http://localhost:5000/leads/                   |
-| 4.5. Lead Update       | PUT    | http://localhost:5000/leads/:id                |
-| 4.6. Lead Delete       | DELETE | http://localhost:5000/leads/:id                |
-| 4.7. Lead Delete       | DELETE | http://localhost:5000/leads/:id                |
-| 4.8. Lead Search       | POST   | http://localhost:5000/leads/search             |
-| 4.9. Lead Validation   | GET    | http://localhost:5000/leads/validation/:id     |
-| 4.10. Leads by Agent   | GET    | http://localhost:5000/leads/leads/agent/:agent |
+| Endpoint               | VERB   | PATH                                       |
+| ---------------------- | ------ | ------------------------------------------ |
+| 4.1. Lead List         | GET    | http://localhost:5000/leads/               |
+| 4.2. Lead Id           | GET    | http://localhost:5000/leads/:id            |
+| 4.3. Lead List by page | GET    | http://localhost:5000/leads/page/:page     |
+| 4.4. Lead Create       | POST   | http://localhost:5000/leads/               |
+| 4.5. Lead Update       | PUT    | http://localhost:5000/leads/:id            |
+| 4.6. Lead Delete       | DELETE | http://localhost:5000/leads/:id            |
+| 4.7. Lead Delete       | DELETE | http://localhost:5000/leads/:id            |
+| 4.8. Lead Search       | POST   | http://localhost:5000/leads/search         |
+| 4.9. Lead Validation   | GET    | http://localhost:5000/leads/validation/:id |
+| 4.10. Leads by Agent   | GET    | http://localhost:5000/leads/agent/:agent   |
 
 #### 5. endpoints for judicial:
 
@@ -201,7 +201,7 @@ development:
       HOST: localhost
       TYPE: mysql
       PORT: 3306
-      DATABASE: movies_backend
+      DATABASE: crmagents
       USERNAME: root
       PASSWORD:
       SYNCHRONIZE: true

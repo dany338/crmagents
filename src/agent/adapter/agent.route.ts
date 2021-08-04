@@ -34,7 +34,7 @@ route.get(
   controller.listByPage.bind(controller)
 );
 route.get(
-  '/agents/user/:user',
+  '/user/:user',
   AuthenticationGuard.canActivate,
   AuthorizationGuard.canActivate('ADMIN'),
   Validators.validate(schemas.LIST_AGENTS_BY_USER),

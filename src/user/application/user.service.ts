@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import * as bcryptjs from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
@@ -19,12 +20,12 @@ export class UserService {
     return await bcryptjs.compare(password, passwordCipher);
   }
 
-  static generateAccessToken(name: string, movies: string[]) {
+  static generateAccessToken(name: string, roles: string[]) {
     const iat = moment().unix();
     const exp = moment().add(env.TOKEN.TIMEOUT, 'seconds').unix();
     const payload = {
       name,
-      movies,
+      roles,
       iat,
       exp,
     };

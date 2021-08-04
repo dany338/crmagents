@@ -2,7 +2,7 @@ import express from 'express';
 import { RoleController } from './judicial.controller';
 import { Validators } from '../../shared/adapter/validator';
 import { schemas } from './judicial.schema';
-import { ErrorHandler } from '../../helper/errors.handler';
+// import { ErrorHandler } from '../../helper/errors.handler';
 import { AuthenticationGuard } from '../../shared/infraestructure/guards/authentication.guard';
 import { AuthorizationGuard } from '../../shared/infraestructure/guards/authorization.guard';
 import { JudicialOperation } from '../infraestructure/judicial.operation';
@@ -38,7 +38,7 @@ route.post(
   AuthenticationGuard.canActivate,
   AuthorizationGuard.canActivate('ADMIN', 'AGENT'),
   Validators.validate(schemas.INSERT),
-  ErrorHandler.asyncError(controller.insert.bind(controller))
+  controller.insert.bind(controller)
 );
 route.put(
   '/:id',

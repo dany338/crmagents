@@ -46,7 +46,7 @@ export class ErrorHandler {
   ) {
     const objError: IError = {
       name: error.name,
-      status: error.status,
+      status: error?.status,
       message: error.message,
     };
 

@@ -33,7 +33,7 @@ export class UserController {
       name: body.name,
       email: body.email,
       password: body.password,
-      movies: body.movies.map((movie: string) => +movie),
+      roles: body?.roles?.map((role: string) => +role) || [],
     };
     const result = await this.useCase.insertCipher(user);
     res.json(result);

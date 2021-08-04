@@ -3,7 +3,7 @@
 import { JudicialModel } from '../domain/judicial.model';
 import { OperationRepository } from '../../shared/infraestructure/operation.repository';
 import { JudicialRepository } from '../application/judicial.repository';
-import { Judicial } from '../../entities/Judicial.entity';
+import { Judicial } from '../../entities/judicial.entity';
 
 export class JudicialOperation
   extends OperationRepository<JudicialModel>
