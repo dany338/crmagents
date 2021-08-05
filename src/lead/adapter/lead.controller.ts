@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable no-useless-constructor */
 import { Request, Response } from 'express';
+import { Like } from 'typeorm';
 import { LeadUseCase } from '../application/lead.usecase';
 import { LeadModel } from '../domain/lead.model';
 
@@ -38,7 +39,8 @@ export class RoleController {
   async searchByName(req: Request, res: Response): Promise<any> {
     const body = req.body;
     const where = [
-      { firstname: body.firstname, lastname: body.lastname },
+      { firstname: Like(`%${body.firstname}%`) },
+      { lastname: Like(`%${body.lastname}%`) },
       { idcard: body.idcard },
     ]; // Querying with OR operator:
     const result = await this.useCase.searchByName(where);

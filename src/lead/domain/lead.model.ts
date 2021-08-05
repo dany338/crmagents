@@ -4,4 +4,6 @@ export interface LeadModel {
   lastname: string;
   idcard: string;
   agent: any;
+  judicials?: any[];
+  score?: number;
 }

@@ -48,7 +48,10 @@ export class LeadOperation
   ): Promise<Result<LeadModel>> {
     const trace: string = OperationService.getTrace();
     const repository: Repository<Lead> = getRepository(Lead);
-    const data: any = await repository.findOne({ where, relations, order });
+    const data: LeadModel = await repository.findOne({ where, relations, order });
+    if(data) {
+      data.score = data.judicials.length > 0 ? 0 : ResponseDto.randomScore(1, 100);
+    }
     console.log('getValidation', data);
     return ResponseDto.format(trace, data);
   }
